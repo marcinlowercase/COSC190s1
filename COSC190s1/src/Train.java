@@ -45,6 +45,7 @@ public class Train {
     public void writeToRAF(RandomAccessFile rafFile) {
         // write the members of Train to the rafFile in the following sequence
         // capacity, country, type, name
+
     }
 
     public void readFromRAF(RandomAccessFile rafFile) {

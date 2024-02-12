@@ -13,7 +13,7 @@ public class Q2 {
         // replace the existing path with an appropriate path to test the method
 //        fetchDifferentJavaFiles("your_project\\src")
 //                .forEach(file -> System.out.println(file.getAbsolutePath()));
-        fetchDifferentJavaFiles("/Users/thaitran/Code/SaskPolytech/S1/S1/src")
+        fetchDifferentJavaFiles("C:\\Users\\tran0885\\Desktop\\s1\\COSC190s1\\src")
                 .forEach(file -> System.out.println(file.getAbsolutePath()));
 
     }
@@ -23,13 +23,12 @@ public class Q2 {
         LinkedList<File> returnList = new LinkedList<>();
         File inputFile = new File(sDirPath);
 
-
         if (inputFile.isFile() && inputFile.getName().endsWith(".java")) {
             returnList.add(inputFile);
         }
         if (inputFile.isDirectory()) {
             for (File f : inputFile.listFiles()) {
-                fetchDifferentJavaFiles(f.getAbsolutePath());
+                returnList.addAll(fetchDifferentJavaFiles(f.getAbsolutePath()));
             }
         }
         returnList = returnList.stream().distinct().collect(Collectors.toCollection(LinkedList::new));
